@@ -4,11 +4,12 @@
 <head>
     <title>Plugin Documentation</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #202020;
             color: #fff;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -31,6 +32,7 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
+            text-transform: uppercase;
         }
 
         .sidebar ul li {
@@ -62,7 +64,7 @@
 
         h2 {
             color: #fff;
-            background-color: #444;
+            background-color: #632020;
             padding: 10px;
             border-radius: 10px;
             margin-top: 40px;
@@ -87,7 +89,7 @@
 
         /* Custom CSS for commands and permissions */
         ul li code {
-            color: #7FFF00;
+            color: #ff7c7c;
         }
     </style>
 </head>
@@ -99,16 +101,30 @@
             <li><a href="#commands"><i class="fas fa-code"></i>Commands</a></li>
             <li><a href="https://dcugithubzone.github.io/SkinModify/" target="_blank"><i class="fas fa-tshirt"></i>Shirts _scl Creator</a></li>
             <li><a href="#gallery"><i class="fas fa-images"></i>Gallery</a></li>
+            <li><a href="your-discord-link" target="_blank"><i class="fab fa-discord"></i>amon_m on Discord</a></li>
         </ul>
     </div>
 
     <div class="container">
         <h1>Plugin Documentation</h1>
 
+        <section id="mustread">
+            <h2>IMPORTANT NOTE</h2>
+            <p>Rules and etc:</p>
+            <ul>
+                <li>You cannot claim ownership of created skins on your server if they are not created with your self-made skin parts.</li>
+                <li>Please credit the original skin overlay makers within your server, don't be rude!</li>
+                <li>I do not claim ownership of all the skin-parts on the given overlays skins folders I include, some of them are made by me, but most are credited within the README.</li>
+                <li>You cannot distribute this plugin or the overlays folder as your own, nor can you share it with others if they have not purchased the plugin!</li>
+            </ul>
+        </section>
+        
         <section id="usage">
             <h2>Usage</h2>
             <p>The plugin provides various features to customize player skins. Here's how you can use the plugin:</p>
             <ul>
+                <li>To create more skins that work with jackets, please head to the 'Shirts _scl Creator' where it'll cut out the second-layers of your shirts automatically.</li>
+                <li>To upload more skin parts, please keep in mind that you need to place them within their corresponding sub-folders to keep it clean and easier to set-up.</li>
                 <li>Use the command <code>/clothes reload</code> to reload the plugin.</li>
                 <li>Use the command <code>/clothes add [overlay_name] [target_skin]</code> to add an overlay to a skin.</li>
                 <li>Use the command <code>/clothes remove [overlay_name] [target_skin]</code> to remove an overlay from a skin.</li>
@@ -168,7 +184,7 @@
                     const target = document.querySelector(link.getAttribute("href"));
                     target.scrollIntoView({ behavior: "smooth" });
                 });
-            });
+           });
 
             // Add active class to navigation link based on scroll position
             window.addEventListener("scroll", function() {
@@ -193,3 +209,4 @@
 </body>
 
 </html>
+
