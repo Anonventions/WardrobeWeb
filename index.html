@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Plugin Documentation</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: #202020;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #333;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 5px;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #fff;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            margin: 10px;
+            max-width: 400px;
+        }
+
+        /* Custom CSS for commands and permissions */
+        ul li code {
+            color: #7FFF00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#usage"><i class="fas fa-play-circle"></i>Usage</a></li>
+            <li><a href="#commands"><i class="fas fa-code"></i>Commands</a></li>
+            <li><a href="https://shirt-creation-website.com" target="_blank"><i class="fas fa-tshirt"></i>Create Shirts</a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i>Gallery</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Plugin Documentation</h1>
+
+        <section id="usage">
+            <h2>Usage</h2>
+            <p>The plugin provides various features to customize player skins. Here's how you can use the plugin:</p>
+            <ul>
+                <li>Use the command <code>/clothes reload</code> to reload the plugin.</li>
+                <li>Use the command <code>/clothes add [overlay_name] [target_skin]</code> to add an overlay to a skin.</li>
+                <li>Use the command <code>/clothes remove [overlay_name] [target_skin]</code> to remove an overlay from a skin.</li>
+                <li>Use the command <code>/clothes reset</code> to reset all skins and overlays.</li>
+            </ul>
+            <p>Replace <code>[overlay_name]</code> with the name of the overlay you want to add or remove, and replace <code>[target_skin]</code> with the target skin name.</p>
+        </section>
+
+        <section id="commands">
+            <h2>Commands</h2>
+            <p>List of available commands:</p>
+            <ul>
+                <li><code>/clothes reload</code> - Reloads the plugin.</li>
+                <li><code>/clothes add [overlay_name] [target_skin]</code> - Adds an overlay to a skin.</li>
+                <li><code>/clothes remove [overlay_name] [target_skin]</code> - Removes an overlay from a skin.</li>
+                <li><code>/clothes reset</code> - Resets all skins and overlays.</li>
+            </ul>
+            <p>Replace <code>[overlay_name]</code> with the name of the overlay you want to add or remove, and replace <code>[target_skin]</code> with the target skin name.</p>
+            <p>Make sure to have the necessary permissions to use these commands.</p>
+        </section>
+
+        <section id="permissions">
+            <h2>Permissions</h2>
+            <p>The plugin provides the following permissions:</p>
+            <ul>
+                <li><code>wardrobeclothes.use</code> - Allows usage of the plugin commands.</li>
+                <li><code>wardrobeclothes.reload</code> - Allows reloading the plugin.</li>
+                <li><code>wardrobeclothes.overlay.[overlay_name]</code> - Allows adding or removing a specific overlay.</li>
+            </ul>
+            <p>Replace <code>[overlay_name]</code> with the name of the overlay you want to grant permission for.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
+                <video controls>
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+                <!-- Add more videos here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        // JavaScript code for interactive features
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll(".sidebar ul li a");
+            navLinks.forEach(function(link) {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute("href"));
+                    target.scrollIntoView({ behavior: "smooth" });
+                });
+            });
+
+            // Add active class to navigation link based on scroll position
+            window.addEventListener("scroll", function() {
+                const sections = document.querySelectorAll("section");
+                const scrollPosition = window.pageYOffset;
+
+                sections.forEach(function(section) {
+                    const offsetTop = section.offsetTop;
+                    const offsetHeight = section.offsetHeight;
+
+                    if (scrollPosition >= offsetTop - 50 && scrollPosition < offsetTop + offsetHeight - 50) {
+                        const targetLink = document.querySelector(`.sidebar ul li a[href="#${section.id}"]`);
+                        navLinks.forEach(function(link) {
+                            link.classList.remove("active");
+                        });
+                        targetLink.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
